@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "stable"
+  env:
+  global:
+    - CC_TEST_REPORTER_ID=371d7f5099c11fd193d47b9ba845f10820f90a8108f3176874a7e72d95ab5b52
 install:
   - npm install
 script:
@@ -8,3 +11,5 @@ script:
 cache:
   directories:
     - "node_modules"
+after_success:
+  - npm run coveralls
