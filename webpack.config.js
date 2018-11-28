@@ -21,11 +21,25 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
         enforce: 'pre'
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name]-[hash:8].[ext]'
+            },
+          }
+        ]
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+     { from: 'public/images', to: 'images' }
+   ]),
   ]
 }

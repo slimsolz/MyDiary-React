@@ -11,9 +11,8 @@ export default function App() {
     <div>
       <Navbar />
       <Switch>
-        <Route exact path='/login' component={Main} />
+        <Route exact path='/' component={Main} />
       </Switch>
-      <h1>My Diary app</h1>
       <Footer />
     </div>
   )
