@@ -37,9 +37,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    }),
-    new CopyWebpackPlugin([
-     { from: 'public/images', to: 'images' }
-   ]),
+    })
   ]
 }
