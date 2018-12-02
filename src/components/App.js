@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Footer from './common/Footer/Footer';
 import Navbar from './common/Navbar/Navbar';
 import Signup from '../containers/SignupPage/signup';
+import Signin from '../containers/SigninPage/Signin';
 import Main from './Main/Main';
 
 import './App.scss';
@@ -15,6 +16,7 @@ export default function App() {
       <Switch>
         <Route exact path='/' component={Main} />
         <Route exact path='/signup' component={Signup} />
+        <Route exact path='/signin' component={Signin} />
         <Route exact path='/entires' component={Main} />
       </Switch>
       <Footer />

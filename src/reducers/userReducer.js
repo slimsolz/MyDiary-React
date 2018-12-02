@@ -1,4 +1,10 @@
-import { SIGNUP_SUCCESS, SIGNUP_FAILURE } from '../actions/types';
+import {
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILURE,
+  SIGNIN_SUCCESS,
+  SIGNIN_FAILURE,
+
+} from '../actions/types';
 
 const initialState = {
   user: {},
@@ -17,6 +23,19 @@ export default function(state = initialState, action) {
         message: action.payload.message
       }
     case SIGNUP_FAILURE:
+      return {
+        ...state,
+        error: action.payload.status,
+        message: action.payload.message
+      }
+    case SIGNIN_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isAuth: true,
+        message: action.payload.message
+      }
+    case SIGNIN_FAILURE:
       return {
         ...state,
         error: action.payload.status,
