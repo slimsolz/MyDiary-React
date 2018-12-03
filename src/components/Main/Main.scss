@@ -1,0 +1,39 @@
+.main-wrapper {
+	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(/public/images/landing_bg.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  padding: 234px 10px 60px 10px;
+  height: auto;
+  color: #fff;
+
+  h1 {
+    font-size: 83px;
+  }
+
+  p{
+    margin-bottom: 30px;
+    font-size: 1.5em;
+  }
+
+  button {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #072e73;
+    border-radius: 50px;
+    background-color: #072e73;
+    padding: 15px;
+  }
+
+  button:hover {
+    border-color: white;
+    color: #072e73;
+    background-color: white;
+  }
+}
