@@ -3,7 +3,7 @@ import React from 'react';
 import './Footer.scss';
 
 const Footer = () => (
-  <footer className="entry-footer">
+  <footer>
     &copy; 2018 | MyDiary
   </footer>
 );
