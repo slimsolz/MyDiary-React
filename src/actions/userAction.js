@@ -7,7 +7,7 @@ import {
 
 } from './types';
 import axios from 'axios';
-import setAuthToken from '../util/AuthUtil';
+import setAuthToken from '../util/authUtil';
 import API from './API';
 
 export const signup = (userData) => dispatch => {
