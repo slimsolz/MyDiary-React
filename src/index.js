@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store/store';
-import setAuthToken from './util/AuthUtil';
+import setAuthToken from './util/authUtil';
 
 
 if (localStorage.token) {
