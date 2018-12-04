@@ -29,7 +29,7 @@ export const signup = (userData) => dispatch => {
   export const signin = (userData) => dispatch => {
     return axios.post('http://localhost:3000/api/v1/auth/signin', userData)
       .then(response => {
-        if(response === 200) {
+        if(response.status === 200) {
           localStorage.setItem('token', response.data.token);
           setAuthToken(response.data.token);
           dispatch({ type: SIGNIN_SUCCESS, payload: response });

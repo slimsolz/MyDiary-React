@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-.wrapper {
-  height: 100vh;
-}
-
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -61,7 +57,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-    .index #mainwrapper {
+    .index .main-wrapper {
       height: 86vh;
     }
 }
@@ -80,7 +76,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 
-    .index #mainwrapper {
+    .index .main-wrapper {
       height: 86vh;
     }
 }
@@ -127,11 +123,6 @@ header h2 {
   color: #072e73;
   padding: 10px;
 }
-
-// #mainwrapper {
-// 	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(../images/landing_bg.jpg) no-repeat;
-// 	background-size: cover;
-// }
 
 .loginbox {
   max-width: 450px;
@@ -249,11 +240,11 @@ footer {
   position: absolute;
 }
 
-#entry-footer {
+.entry-footer {
   bottom: 0;
 }
 
-#entriesList {
+.entriesList {
   border: 1px solid #072e73;
   margin-bottom: 10px;
   height: 350px;
@@ -275,7 +266,7 @@ footer {
 		margin-top: 0px;
 	}
 
-	#entriesList {
+	.entriesList {
 	  height: 100px;
 	}
 
@@ -283,7 +274,7 @@ footer {
 		margin: 10px auto;
 	}
 
-	#story img{
+	.story img{
 		max-width: 100%;
 		vertical-align: top;
 		float: none;
@@ -309,11 +300,12 @@ figure:hover {
 }
 
 figcaption h2 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 figcaption p {
   font-size: 12px;
+  word-break: break-word;
 }
 
 article a {
@@ -364,8 +356,7 @@ article a {
   cursor: pointer;
 }
 
-#story {
-	/*padding: 5px;*/
+.story {
 	word-wrap: break-word;
 	word-spacing: 2px;
   font-family: 'Rock Salt', serif;
@@ -376,7 +367,7 @@ figure img {
   height: 188px;
 }
 
-#story img{
+.story img{
 	padding-right: 20px;
 }
 
@@ -388,7 +379,7 @@ figure img {
   text-shadow: 4px 4px 4px #aaa;
 }
 
-#new_link a, .modal_buttons a, #delete {
+.new_link a, .modal_buttons a, .delete {
 	text-decoration: none;
 	border: 1px solid;
 	padding: 10px;
@@ -396,13 +387,13 @@ figure img {
 	margin: 10px;
 }
 
-#delete {
+.delete {
 	background-color: red;
 	color: white;
   cursor: pointer;
 }
 
-#new_form, #edit_form {
+.new_form, .edit_form {
 	margin-left: 20px;
 	margin-right: 20px;
 }
@@ -461,23 +452,23 @@ legend {
   font-size: 3em;
 }
 
-#new_form textarea, #edit_form textarea, .profile_form textarea {
+.new_form textarea, .edit_form textarea, .profile_form textarea {
 	height: 457px;
 }
 
-#new_form label, #edit_form label, .profile_form label {
+.new_form label, .edit_form label, .profile_form label {
   text-align: center;
   font-size: 2em;
 }
 
 
-#new_form input[type=submit] {
+.new_form input[type=submit] {
 	background: #9AC0CD;
 	border: 1px solid #9AC0CD;
   max-width: 100%;
 }
 
-#edit_form input[type=submit] {
+.edit_form input[type=submit] {
   background: #9AC0CD;
   border: 1px solid #9AC0CD;
   max-width: 100%;
@@ -489,10 +480,6 @@ legend {
   max-width: 100%;
 }
 
-// #profilewrapper {
-//   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(../images/profile_bg.jpg) no-repeat;
-//   background-size: cover;
-// }
 
 .profile {
   max-width: 1000px;
@@ -508,9 +495,8 @@ fieldset {
   border: 1px solid #072e73;
 }
 
-#wrapper {
-  max-width: 90%;
-  margin: 0 auto;
+.wrapper {
+  height: 100vh;
 }
 
 
@@ -543,7 +529,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-#display {
+.display {
   width: auto;
   text-align: center;
   padding: .8em;
@@ -555,13 +541,43 @@ input[type=submit] {
   top: 4em;
 }
 
-#display.show {
+.display.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s;
   animation: fadein 0.5s;
 }
 
-#no_entry {
+.no_entry {
   font-size: 5em;
   color: darkgrey;
 }
+
+.inner-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  min-height: 921px;
+}
+
+.content {
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .content-wrapper{
+    max-width: 60%;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 6px;
+    margin: 30px auto;
+    box-shadow: 0 0 2px 3px #81a5e43d;
+  }
+  p{
+    line-height: 1.4;
+    color: #555;
+    font-size: 16px;
+  }
+}
+
