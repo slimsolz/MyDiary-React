@@ -3,13 +3,15 @@ import {
   SIGNUP_FAILURE,
   SIGNIN_SUCCESS,
   SIGNIN_FAILURE,
+  SIGNOUT,
 
 } from './types';
 import axios from 'axios';
 import setAuthToken from '../util/AuthUtil';
+import API from './API';
 
 export const signup = (userData) => dispatch => {
-  return axios.post('http://localhost:3000/api/v1/auth/signup', userData)
+  return axios.post(`${API}/auth/signup`, userData)
     .then(response => {
       if(response === 201) {
         localStorage.setItem('token', response.data.token);
@@ -27,7 +29,7 @@ export const signup = (userData) => dispatch => {
   }
 
   export const signin = (userData) => dispatch => {
-    return axios.post('http://localhost:3000/api/v1/auth/signin', userData)
+    return axios.post(`${API}/auth/signin`, userData)
       .then(response => {
         if(response.status === 200) {
           localStorage.setItem('token', response.data.token);
@@ -43,3 +45,7 @@ export const signup = (userData) => dispatch => {
         throw err;
       })
     }
+
+export const signout = () => dispatch => {
+  dispatch({ type: SIGNOUT, payload: {} });
+}

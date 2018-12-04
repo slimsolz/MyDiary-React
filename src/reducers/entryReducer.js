@@ -47,6 +47,7 @@ export default function(state = initialState, action) {
     case DELETE_ENTRY_SUCCESS:
       return {
         ...state,
+        entries: state.entries.filter(data => data.id !== action.payload.entryId),
         message: action.payload.message
       }
     case DELETE_ENTRY_FAILURE:

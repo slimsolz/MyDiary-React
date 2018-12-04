@@ -3,6 +3,7 @@ import {
   SIGNUP_FAILURE,
   SIGNIN_SUCCESS,
   SIGNIN_FAILURE,
+  SIGNOUT
 
 } from '../actions/types';
 
@@ -41,6 +42,8 @@ export default function(state = initialState, action) {
         error: action.payload.status,
         message: action.payload.message
       }
+    case SIGNOUT:
+        return initialState;
     default:
       return state;
   }

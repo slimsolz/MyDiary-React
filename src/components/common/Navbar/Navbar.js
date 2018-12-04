@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import isLoggedIn from '../../../util/isLoggedIn';
+import { signout } from '../../../actions/userAction';
 
 import './Navbar.scss';
 
@@ -14,13 +16,14 @@ class Navbar extends Component {
 
   handleSignOut() {
     localStorage.removeItem('token');
+    this.props.signout();
   }
   render () {
     return(
       <header className="navbar">
         <div className="logo"><Link to="/">mydiary</Link></div>
         <div className="nav-list">
-          {!isLoggedIn ?
+          {!this.props.user.isAuth ?
             <ul>
             <Link to="/signup"><li>SIGN UP</li></Link>
             <Link to="/signin"><li>SIGN IN</li></Link>
@@ -36,5 +39,9 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  user: state.user,
+})
+
+export default connect(mapStateToProps, { signout })(Navbar);
 

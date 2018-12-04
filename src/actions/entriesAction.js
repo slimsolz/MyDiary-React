@@ -11,9 +11,10 @@ import {
   VIEW_ENTRY_FAILURE
  } from './types';
 import axios from 'axios';
+import API from './API';
 
 export const fetchEntries = () => dispatch => {
-    return axios.get('http://localhost:3000/api/v1/entries')
+    return axios.get(`${API}/entries`)
       .then(res => {
         dispatch({
           type: FETCH_ENTRIES_SUCCESS,
@@ -28,7 +29,7 @@ export const fetchEntries = () => dispatch => {
   }
 
   export const newEntry = (entry) => dispatch => {
-    return axios.post('http://localhost:3000/api/v1/entries', entry)
+    return axios.post(`${API}/entries`, entry)
       .then(res => {
         dispatch({
           type: NEW_ENTRY_SUCCESS,
@@ -43,11 +44,11 @@ export const fetchEntries = () => dispatch => {
   }
 
   export const deleteEntry = (entryId) => dispatch => {
-    return axios.delete(`http://localhost:3000/api/v1/entries/${entryId}`)
+    return axios.delete(`${API}/entries/${entryId}`)
       .then(res => {
         dispatch({
           type: DELETE_ENTRY_SUCCESS,
-          payload: res
+          payload: {entryId, message: res.data.message}
         })
       })
       .catch(err => {
@@ -58,7 +59,7 @@ export const fetchEntries = () => dispatch => {
   }
 
   export const updateEntry = (entryId, entry) => dispatch => {
-    return axios.put(`http://localhost:3000/api/v1/entries/${entryId}`, entry)
+    return axios.put(`${API}/entries/${entryId}`, entry)
       .then(res => {
         dispatch({
           type: UPDATE_ENTRY_SUCCESS,
@@ -73,7 +74,7 @@ export const fetchEntries = () => dispatch => {
   }
 
   export const fetchEntry = (entryId) => dispatch => {
-    return axios.get(`http://localhost:3000/api/v1/entries/${entryId}`)
+    return axios.get(`${API}/entries/${entryId}`)
       .then(res => {
         console.log(res);
         dispatch({

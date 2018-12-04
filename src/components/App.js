@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
+import PrivateRoute from '../privateRoute';
 
 import Footer from './common/Footer/Footer';
 import Navbar from './common/Navbar/Navbar';
@@ -21,10 +22,10 @@ export default function App() {
         <Route exact path='/' component={Main} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/signin' component={Signin} />
-        <Route exact path='/entries' component={AllEntries} />
-        <Route exact path='/new_Entry' component={NewEntry} />
-        <Route path='/edit_Entry' component={EditEntry} />
-        <Route path='/view_Entry' component={ViewEntry} />
+        <PrivateRoute path='/entries' component={AllEntries} />
+        <PrivateRoute path='/new_Entry' component={NewEntry} />
+        <PrivateRoute path='/edit_Entry' component={EditEntry} />
+        <PrivateRoute path='/view_Entry' component={ViewEntry} />
       </Switch>
       <Footer />
     </div>
